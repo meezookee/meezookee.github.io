@@ -1,7 +1,11 @@
-{%- assign previousPost = collections.all | getPreviousCollectionItem: page -%}
-{%- assign nextPost = collections.all | getNextCollectionItem: page -%}
+---
+tags: post
+---
+
+{%- assign previousPost = collections.post | getPreviousCollectionItem: page -%}
+{%- assign nextPost = collections.post | getNextCollectionItem: page -%}
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/style.css" />
@@ -9,17 +13,27 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    <h1>
-      <a href="{{ page.url }}">{{ title }}</a>
-    </h1>
-    {{ content | raw }}
+    <article>
+      <header>
+        <h1>
+          <a href="{{ page.url }}">{{ title }}</a>
+        </h1>
+      </header>
+      {{ content | raw }}
+      <footer>
+        <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
+      </footer>
+    </article>
     <footer>
-      {%- if previousPost %}
-      ←<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-      {%- endif -%}
-      {%- if nextPost %}
-      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>→
-      {%- endif %}
+      <nav>
+        {%- if previousPost %}
+        <span class="previous">前：<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></span>
+        {%- endif -%}
+        {%- if nextPost %}
+        <span class="next">次：<a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></span>
+        {%- endif %}
+        <a class="up" href="/">Index</a>
+      </nav>
     </footer>
   </body>
 </html>

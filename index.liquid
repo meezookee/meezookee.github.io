@@ -1,6 +1,5 @@
 ---
 title: Index
-lang: ja
 pagination:
   data: collections.all
   size: 2
@@ -8,7 +7,7 @@ pagination:
 ---
 
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/style.css" />
@@ -16,24 +15,33 @@ pagination:
     <title>{{ title }}</title>
   </head>
   <body>
-    <h1>
-      <a href="{{ page.url }}">{{ title }}</a>
-    </h1>
+    <header>
+      <h1>
+        <a href="{{ page.url }}">{{ title }}</a>
+      </h1>
+    </header>
     {%- for post in posts %}
-    <article lang="{{ post.data.lang }}">
-      <h2>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </h2>
-      <div>{{ post.content }}</div>
+    <article>
+      <header>
+        <h2>
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
+      </header>
+      {{ post.content }}
+      <footer>
+        <time datetime="{{ post.date | toISOString }}">{{ post.date | toLocaleString }}</time>
+      </footer>
     </article>
     {% endfor %}
     <footer>
-      {%- if pagination.href.previous %}
-      <a href="{{ pagination.href.previous }}">←</a>
-      {%- endif %}
-      {%- if pagination.href.next %}
-      <a href="{{ pagination.href.next }}">→</a>
-      {%- endif %}
+      <nav>
+        {%- if pagination.href.previous %}
+        <a class="previous" href="{{ pagination.href.previous }}">前</a>
+        {%- endif %}
+        {%- if pagination.href.next %}
+        <a class="next" href="{{ pagination.href.next }}">次</a>
+        {%- endif %}
+      </nav>
     </footer>
   </body>
 </html>

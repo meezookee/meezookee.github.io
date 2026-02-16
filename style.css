@@ -6,8 +6,31 @@ body {
   max-inline-size: 40em;
   margin-inline: auto;
   margin-block: 0;
+  font-family: sans-serif;
 }
 
 article p {
   font-family: serif;
+  white-space: pre-wrap;
+}
+
+nav {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr;
+}
+
+.previous {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.next {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.up {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  justify-self: center;
 }
