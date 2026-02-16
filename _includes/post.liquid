@@ -1,0 +1,25 @@
+{%- assign previousPost = collections.all | getPreviousCollectionItem: page -%}
+{%- assign nextPost = collections.all | getNextCollectionItem: page -%}
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>
+      <a href="{{ page.url }}">{{ title }}</a>
+    </h1>
+    {{ content | raw }}
+    <footer>
+      {%- if previousPost %}
+      ←<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+      {%- endif -%}
+      {%- if nextPost %}
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>→
+      {%- endif %}
+    </footer>
+  </body>
+</html>

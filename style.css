@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-inline-size: 40em;
+  margin-inline: auto;
+  margin-block: 0;
+}
+
+article p {
+  font-family: serif;
+}
