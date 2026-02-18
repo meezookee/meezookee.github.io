@@ -1,0 +1,8 @@
+{
+  "layout": "post.liquid",
+  "tags": ["post"],
+  "up": {
+    "url": "/blog",
+    "title": "ブログ"
+  }
+}

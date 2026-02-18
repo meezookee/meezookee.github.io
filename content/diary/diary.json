@@ -1,0 +1,8 @@
+{
+  "layout": "post.liquid",
+  "tags": ["diary"],
+  "up": {
+    "url": "/diary",
+    "title": "日記"
+  }
+}

@@ -9,3 +9,9 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("toISOString", (v) => v.toISOString());
 }
+
+export const config = {
+  dir: {
+    input: "content",
+  },
+};

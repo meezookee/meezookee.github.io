@@ -9,12 +9,12 @@ body {
   font-family: sans-serif;
 }
 
-article p {
+article pre {
   font-family: serif;
   white-space: pre-wrap;
 }
 
-nav {
+footer nav {
   display: grid;
   grid-template: auto auto / 1fr 1fr;
 }

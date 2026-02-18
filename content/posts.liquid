@@ -1,7 +1,6 @@
 ---
-title: Index
 pagination:
-  data: collections.all
+  data: collections.post
   size: 2
   alias: posts
 ---
@@ -12,7 +11,7 @@ pagination:
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }}</title>
+    <title>{{ title }} - 閉塞圏</title>
   </head>
   <body>
     <header>
@@ -34,7 +33,7 @@ pagination:
     </article>
     {% endfor %}
     <footer>
-      <nav>
+      <nav class="pagination">
         {%- if pagination.href.previous %}
         <a class="previous" href="{{ pagination.href.previous }}">前</a>
         {%- endif %}

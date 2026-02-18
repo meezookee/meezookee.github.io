@@ -1,0 +1,44 @@
+---
+layout: base.liquid
+pagination:
+  size: 2
+  alias: posts
+---
+
+<header>
+  <h1>
+    <a href="{{ page.url }}">{{ title }}</a>
+  </h1>
+</header>
+
+{% for post in posts %}
+<article>
+  <header>
+    <h2>
+      <a href="{{ post.url }}">
+        {% if post.data.title %}
+        {{ post.data.title }}
+        {% else %}
+        {{ post.date | toLocaleString }}
+        {% endif %}
+      </a>
+    </h2>
+  </header>
+  <pre>{{ post.content }}</pre>
+  <footer>
+    <time datetime="{{ post.date | toISOString }}">{{ post.date | toLocaleString }}</time>
+  </footer>
+</article>
+{% endfor %}
+
+<footer>
+  <nav>
+    {% if pagination.href.previous %}
+    <a class="previous" href="{{ pagination.href.previous }}">前</a>
+    {% endif %}
+    {% if pagination.href.next %}
+    <a class="next" href="{{ pagination.href.next }}">次</a>
+    {% endif %}
+    <a class="up" href="{{ up.url }}">{{ up.title }}</a>
+  </nav>
+</footer>

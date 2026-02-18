@@ -1,0 +1,35 @@
+---
+layout: base.liquid
+---
+
+{% assign previousPost = collections.post | getPreviousCollectionItem: page %}
+{% assign nextPost = collections.post | getNextCollectionItem: page %}
+<article>
+  <header>
+    <h1>
+      <a href="{{ page.url }}">
+        {% if title %}
+          {{ title }}
+        {% else %}
+          {{ page.date | toLocaleString }}
+        {% endif %}
+      </a>
+    </h1>
+  </header>
+  <pre>{{ content | raw }}</pre>
+  <footer>
+    <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
+  </footer>
+</article>
+
+<footer>
+  <nav>
+    {% if previousPost %}
+    <span class="previous">前：<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></span>
+    {% endif %}
+    {% if nextPost %}
+    <span class="next">次：<a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></span>
+    {% endif %}
+    <a class="up" href="{{ up.url }}">{{ up.title }}</a>
+  </nav>
+</footer>
