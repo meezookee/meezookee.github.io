@@ -4,23 +4,26 @@ layout: base.liquid
 
 {% assign previousPost = collections.post | getPreviousCollectionItem: page %}
 {% assign nextPost = collections.post | getNextCollectionItem: page %}
-<article>
-  <header>
-    <h1>
-      <a href="{{ page.url }}">
-        {% if title %}
-          {{ title }}
-        {% else %}
-          {{ page.date | toLocaleString }}
-        {% endif %}
-      </a>
-    </h1>
-  </header>
-  <pre>{{ content | raw }}</pre>
-  <footer>
-    <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
-  </footer>
-</article>
+
+<main>
+  <article>
+    <header>
+      <h1>
+        <a href="{{ page.url }}">
+          {% if title %}
+            {{ title }}
+          {% else %}
+            {{ page.date | toLocaleString }}
+          {% endif %}
+        </a>
+      </h1>
+    </header>
+    <pre>{{ content | raw }}</pre>
+    <footer>
+      <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
+    </footer>
+  </article>
+</main>
 
 <footer>
   <nav>

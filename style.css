@@ -3,9 +3,9 @@
 }
 
 body {
-  max-inline-size: 40em;
+  max-inline-size: 41em;
   margin-inline: auto;
-  margin-block: 0;
+  padding-inline: 0.5em;
   font-family: sans-serif;
 }
 
