@@ -19,9 +19,9 @@ pagination:
       <h2>
         <a href="{{ post.url }}">
           {% if post.data.title %}
-          {{ post.data.title }}
+            {{ post.data.title }}
           {% else %}
-          {{ post.date | toLocaleString }}
+            {{ post.date | toShortLocaleString }}
           {% endif %}
         </a>
       </h2>

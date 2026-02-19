@@ -7,6 +7,13 @@ export default function (eleventyConfig) {
       timeZone: "Asia/Tokyo",
     }),
   );
+  eleventyConfig.addFilter("toShortLocaleString", (v) =>
+    v.toLocaleString("ja-JP", {
+      dateStyle: "short",
+      timeStyle: "long",
+      timeZone: "Asia/Tokyo",
+    }),
+  );
   eleventyConfig.addFilter("toISOString", (v) => v.toISOString());
 }
 

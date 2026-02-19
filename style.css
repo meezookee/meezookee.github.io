@@ -12,6 +12,7 @@ body {
 article pre {
   font-family: serif;
   white-space: pre-wrap;
+  line-height: 2;
 }
 
 footer nav {

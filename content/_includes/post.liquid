@@ -13,7 +13,7 @@ layout: base.liquid
           {% if title %}
             {{ title }}
           {% else %}
-            {{ page.date | toLocaleString }}
+            {{ page.date | toShortLocaleString }}
           {% endif %}
         </a>
       </h1>
