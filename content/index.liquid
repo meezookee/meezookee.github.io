@@ -3,7 +3,7 @@ layout: base.liquid
 title: 閉塞圏
 ---
 
-<header>
+<main>
   <h1>
     <a href="{{ page.url }}">閉塞圏</a>
   </h1>
@@ -11,27 +11,4 @@ title: 閉塞圏
     <a href="/blog">ブログ</a>
     <a href="/diary">日記</a>
   </nav>
-</header>
-
-<main>
-  <header>
-    <h2>
-      <a href="/blog">Blog</a>
-    </h2>
-  </header>
-  {%- for post in collections.post limit: 5 %}
-  <article>
-    <header>
-      <h3>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </h3>
-    </header>
-    {{ post.content | truncate: 80 }}
-    <footer>
-      <time datetime="{{ post.date | toISOString }}"
-        >{{ post.date | toLocaleString }}</time
-      >
-    </footer>
-  </article>
-  {% endfor %}
 </main>
