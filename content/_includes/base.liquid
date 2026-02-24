@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }}{% if subtitle %} - {{ subtitle }}{% endif %}</title>
+    <title>{% if title %}{{ title }}{% else %}{{ page.date | toShortLocaleString }}{% endif %}{% if subtitle %} - {{ subtitle }}{% endif %}</title>
   </head>
   <body>{{ content }}</body>
 </html>
