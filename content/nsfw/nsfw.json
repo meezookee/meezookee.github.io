@@ -1,0 +1,8 @@
+{
+  "layout": "post.liquid",
+  "tags": ["nsfw"],
+  "up": {
+    "url": "/nsfw",
+    "title": "NSFW"
+  }
+}
