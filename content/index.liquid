@@ -8,9 +8,9 @@ title: 閉塞圏
     <a href="{{ page.url }}">閉塞圏</a>
   </h1>
   <nav>
-    <a href="/blog">ブログ</a>
-    <a href="/diary">日記</a>
-    <a href="/nsfw">NSFW</a>
+    {% for tag in tags %}
+    <a href="/{{ tag.slug }}/">{{ tag.name }}</a>
+    {% endfor %}
   </nav>
   <aside>各ページのURLはsubject to changeである。</aside>
 </main>
