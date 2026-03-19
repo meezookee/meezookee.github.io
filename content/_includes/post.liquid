@@ -9,13 +9,11 @@ layout: base.liquid
   <article>
     <header>
       <h1>
-        <a href="{{ page.url }}">
-          {% if title %}
-            {{ title }}
-          {% else %}
-            {{ page.date | toShortLocaleString }}
-          {% endif %}
-        </a>
+        {% if title %}
+          {{ title }}
+        {% else %}
+          {{ page.date | toShortLocaleString }}
+        {% endif %}
       </h1>
     </header>
     <pre>{{ content | raw }}</pre>

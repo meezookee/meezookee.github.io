@@ -9,6 +9,22 @@ body {
   font-family: sans-serif;
 }
 
+a:link {
+  color: #006a9f;
+}
+
+a:visited {
+  color: #884882;
+}
+
+a:hover {
+  color: #22753f;
+}
+
+a:active {
+  color: #925100;
+}
+
 article pre {
   font-family: serif;
   white-space: pre-wrap;
