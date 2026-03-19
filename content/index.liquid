@@ -1,14 +1,6 @@
 ---
-layout: base.liquid
+layout: post-list.liquid
 title: 閉塞圏
+pagination:
+  data: collections.post
 ---
-
-<main>
-  <h1>閉塞圏</h1>
-  <nav>
-    {% for tag in tags %}
-    <a href="/{{ tag.slug }}/">{{ tag.name }}</a>
-    {% endfor %}
-  </nav>
-  <aside>各ページのURLはsubject to changeである。</aside>
-</main>

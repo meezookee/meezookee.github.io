@@ -24,7 +24,7 @@ pagination:
         </a>
       </h2>
     </header>
-    <pre>{{ post.content }}</pre>
+    <pre>{{ post.content | raw }}</pre>
     <footer>
       <time datetime="{{ post.date | toISOString }}">{{ post.date | toLocaleString }}</time>
     </footer>
