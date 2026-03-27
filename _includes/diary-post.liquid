@@ -1,0 +1,47 @@
+---
+layout: base.liquid
+---
+
+{% assign previousPost = collections.diary | getPreviousCollectionItem: page %}
+{% assign nextPost = collections.diary | getNextCollectionItem: page %}
+
+<main class="post">
+  <article>
+    <header>
+      <h1>
+        {% if title %}
+          {{ title }}
+        {% else %}
+          {{ page.date | toShortLocaleString }}
+        {% endif %}
+      </h1>
+    </header>
+    <pre>{{ content | raw }}</pre>
+    <footer>
+      <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
+        <nav>
+        {% if previousPost %}
+        <a class="previous" href="{{ previousPost.url }}">
+          {% if previousPost.data.title %}
+            {{ previousPost.data.title }}
+          {% else %}
+            {{ previousPost.date | toShortLocaleString }}
+          {% endif %}
+        </a>
+        {% endif %}
+
+        {% if nextPost %}
+        <a class="next" href="{{ nextPost.url }}">
+          {% if nextPost.data.title %}
+            {{ nextPost.data.title }}
+          {% else %}
+            {{ nextPost.date | toShortLocaleString }}
+          {% endif %}
+        </a>
+        {% endif %}
+        
+        <a class="up" href="/diary">日記帳</a>
+      </nav>
+    </footer>
+  </article>
+</main>

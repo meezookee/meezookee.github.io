@@ -6,5 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if title %}{{ title }}{% else %}{{ page.date | toShortLocaleString }}{% endif %}{% if subtitle %} - {{ subtitle }}{% endif %}</title>
   </head>
-  <body>{{ content }}</body>
+  <body>
+    <div class="content">{{ content }}</div>
+  </body>
 </html>

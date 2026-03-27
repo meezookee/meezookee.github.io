@@ -12,7 +12,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("toShortLocaleString", (v) =>
     v.toLocaleString("ja-JP", {
       dateStyle: "short",
-      timeStyle: "long",
       timeZone: "Asia/Tokyo",
     }),
   );

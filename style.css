@@ -3,10 +3,22 @@
 }
 
 body {
-  max-inline-size: 41em;
-  margin-inline: auto;
-  padding-inline: 0.5em;
   font-family: sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template:
+    "aside main" auto
+    / 1fr minmax(auto, 40em) 1fr;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
 }
 
 a:link {
@@ -41,9 +53,17 @@ footer nav {
   justify-self: start;
 }
 
+.post .previous::before {
+  content: "前：";
+}
+
 .next {
   grid-column: 2;
   justify-self: end;
+}
+
+.post .next::before {
+  content: "次：";
 }
 
 .up {

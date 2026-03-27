@@ -1,5 +1,0 @@
-{
-  "permalink": "/{{ page.fileSlug }}/",
-  "layout": "post.liquid",
-  "tags": ["post"]
-}

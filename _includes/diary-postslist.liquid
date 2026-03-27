@@ -1,16 +1,12 @@
 ---
 layout: base.liquid
-pagination:
-  size: 5
-  alias: posts
-  reverse: true
 ---
 
-<header>
-  <h1>{{ title }}</h1>
-</header>
+<main class="list">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
 
-<main>
   {% for post in posts %}
   <article>
     <header>
@@ -30,15 +26,16 @@ pagination:
     </footer>
   </article>
   {% endfor %}
-</main>
 
-<footer>
-  <nav>
-    {% if pagination.href.previous %}
-    <a class="previous" href="{{ pagination.href.previous }}">前</a>
-    {% endif %}
-    {% if pagination.href.next %}
-    <a class="next" href="{{ pagination.href.next }}">次</a>
-    {% endif %}
-  </nav>
-</footer>
+  <footer>
+    <nav>
+      {% if pagination.href.previous %}
+      <a class="previous" href="{{ pagination.href.previous }}">前</a>
+      {% endif %}
+      {% if pagination.href.next %}
+      <a class="next" href="{{ pagination.href.next }}">次</a>
+      {% endif %}
+      <a class="up" href="{{ up.url }}">{{ up.title }}</a>
+    </nav>
+  </footer>
+</main>
