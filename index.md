@@ -11,6 +11,8 @@ title: 閉塞圏
 
 - [日記帳](/diary)
 
+- [日本人の歴史意識に関する所感](/on-japanese-history-awareness)
+
 </nav>
 
 </main>
