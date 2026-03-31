@@ -2,23 +2,10 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-}
-
 .content {
-  display: grid;
-  grid-template:
-    "aside main" auto
-    / 1fr minmax(auto, 40em) 1fr;
-}
-
-main {
-  grid-area: main;
-}
-
-aside {
-  grid-area: aside;
+  width: 40em;
+  margin-inline: auto;
+  font-family: sans-serif;
 }
 
 a:link {
@@ -37,8 +24,13 @@ a:active {
   color: #925100;
 }
 
-article pre {
+p,
+pre,
+dd {
   font-family: serif;
+}
+
+pre {
   white-space: pre-wrap;
   line-height: 2;
 }
