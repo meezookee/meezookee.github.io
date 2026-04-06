@@ -21,7 +21,7 @@ layout: base.liquid
       <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
         <nav>
         {% if previousPost %}
-        <a class="previous" href="{{ previousPost.url }}">
+        <a class="previous" href="{{ previousPost.url }}">前：
           {% if previousPost.data.title %}
             {{ previousPost.data.title }}
           {% else %}
@@ -31,7 +31,7 @@ layout: base.liquid
         {% endif %}
 
         {% if nextPost %}
-        <a class="next" href="{{ nextPost.url }}">
+        <a class="next" href="{{ nextPost.url }}">次：
           {% if nextPost.data.title %}
             {{ nextPost.data.title }}
           {% else %}

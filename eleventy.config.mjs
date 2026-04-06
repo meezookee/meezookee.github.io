@@ -1,4 +1,9 @@
 export default function (eleventyConfig) {
+  eleventyConfig.addTemplateFormats("txt");
+  eleventyConfig.addExtension("txt", {
+    compile: async (content) => async () => content,
+  });
+
   eleventyConfig.addPassthroughCopy("style.css");
 
   eleventyConfig.addFilter("toLocaleString", (v) =>
@@ -15,5 +20,6 @@ export default function (eleventyConfig) {
       timeZone: "Asia/Tokyo",
     }),
   );
+
   eleventyConfig.addFilter("toISOString", (v) => v.toISOString());
 }
