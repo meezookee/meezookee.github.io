@@ -1,5 +1,5 @@
 .content {
-  max-width: 40em;
+  max-inline-size: 40em;
   margin-inline: auto;
 }
 
