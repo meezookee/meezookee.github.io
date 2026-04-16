@@ -1,5 +1,4 @@
 {
-  "layout": "diary-post.liquid",
   "tags": ["diary"],
   "parent": {
     "title": "日記帳",
