@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="alternate" href="/feed.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if title %}{{ title }}{% else %}{{ page.date | toShortLocaleString }}{% endif %}{% if subtitle %} - {{ subtitle }}{% endif %}</title>
   </head>
