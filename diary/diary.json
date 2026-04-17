@@ -3,5 +3,6 @@
   "parent": {
     "title": "日記帳",
     "url": "/diary"
-  }
+  },
+  "layout": "diary-post.liquid"
 }
