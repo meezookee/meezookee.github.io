@@ -20,14 +20,26 @@ a:active {
 }
 
 .content,
-time {
+time,
+em {
   font-family: sans-serif;
 }
 
 p,
 pre,
 dd {
-  font-family: serif;
+  font-family:
+    Noto Serif CJK JP,
+    serif;
+  text-align: justify;
+}
+
+em {
+  font-style: normal;
+}
+
+strong {
+  font-weight: bold;
 }
 
 p,
