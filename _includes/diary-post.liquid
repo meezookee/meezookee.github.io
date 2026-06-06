@@ -2,47 +2,37 @@
 layout: base.liquid
 tags: post
 ---
-
-{% assign previousPost = collections.diary | getPreviousCollectionItem: page %}
-{% assign nextPost = collections.diary | getNextCollectionItem: page %}
-
-<main class="post">
-  <article>
-    <header>
-      <h1>
-        {% if title %}
-          {{ title }}
-        {% else %}
-          {{ page.date | toShortLocaleString }}
-        {% endif %}
-      </h1>
-    </header>
-    <pre>{{ content | raw }}</pre>
-    <footer>
-      <time datetime="{{ page.date | toISOString }}">{{ page.date | toLocaleString }}</time>
-        <nav>
-        {% if previousPost %}
-        <a class="previous" href="{{ previousPost.url }}">前：
-          {% if previousPost.data.title %}
-            {{ previousPost.data.title }}
-          {% else %}
-            {{ previousPost.date | toShortLocaleString }}
-          {% endif %}
-        </a>
-        {% endif %}
-
-        {% if nextPost %}
-        <a class="next" href="{{ nextPost.url }}">次：
-          {% if nextPost.data.title %}
-            {{ nextPost.data.title }}
-          {% else %}
-            {{ nextPost.date | toShortLocaleString }}
-          {% endif %}
-        </a>
-        {% endif %}
-        
-        <a class="up" href="{{ parent.url }}">{{ parent.title }}</a>
-      </nav>
-    </footer>
-  </article>
-</main>
+{% assign prev = collections.diary | getPreviousCollectionItem: page %}
+{% assign next = collections.diary | getNextCollectionItem: page %}
+<article>
+  <h1>
+  {% if title %}
+    {{ title }}
+  {% else %}
+    {{ page.date | date: "%Y年%m月%d日" }}
+  {% endif %}
+  </h1>
+  <pre>{{ content | raw }}</pre>
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日%H時%M分" }}</time>
+  <footer>
+    {% if prev %}
+    <a class="prev" href="{{ prev.url }}">前：
+    {%- if prev.data.title -%}
+      {{- prev.data.title -}}
+    {%- else -%}
+      {{- prev.date | date: "%Y年%m月%d日" -}}
+    {%- endif -%}
+    </a>
+    {% endif %}
+    {% if next %}
+    <a class="next" href="{{ next.url }}">次：
+    {%- if next.data.title -%}
+      {{- next.data.title -}}
+    {%- else -%}
+      {{- next.date | date: "%Y年%m月%d日" -}}
+    {%- endif -%}
+    </a>
+    {% endif %}
+    <a class="up" href="{{ parent.url }}">{{ parent.title }}</a>
+  </footer>
+</article>

@@ -1,4 +1,4 @@
-.content {
+body {
   max-inline-size: 40em;
   margin-inline: auto;
 }
@@ -19,7 +19,6 @@ a:active {
   color: #925100;
 }
 
-.content,
 time,
 em {
   font-family: sans-serif;
@@ -52,12 +51,12 @@ pre {
   white-space: pre-wrap;
 }
 
-footer nav {
+footer {
   display: grid;
   grid-template: auto auto / 1fr 1fr;
 }
 
-.previous {
+.prev {
   grid-column: 1;
   justify-self: start;
 }

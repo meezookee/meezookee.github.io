@@ -2,40 +2,29 @@
 layout: base.liquid
 ---
 
-<main class="list">
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
+<h1>{{ title }}</h1>
+{% for post in posts %}
+<article>
+  <h2>
+    <a href="{{ post.url }}">
+    {% if post.data.title %}
+      {{ post.data.title }}
+    {% else %}
+      {{ post.date | date: "%Y年%m月%d日" }}
+    {% endif %}
+    </a>
+  </h2>
+  <pre>{{ post.content | raw }}</pre>
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%m月%d日%H時%M分" }}</time>
+</article>
+{% endfor %}
 
-  {% for post in posts %}
-  <article>
-    <header>
-      <h2>
-        <a href="{{ post.url }}">
-          {% if post.data.title %}
-            {{ post.data.title }}
-          {% else %}
-            {{ post.date | toShortLocaleString }}
-          {% endif %}
-        </a>
-      </h2>
-    </header>
-    <pre>{{ post.content | raw }}</pre>
-    <footer>
-      <time datetime="{{ post.date | toISOString }}">{{ post.date | toLocaleString }}</time>
-    </footer>
-  </article>
-  {% endfor %}
-
-  <footer>
-    <nav>
-      {% if pagination.href.previous %}
-      <a class="previous" href="{{ pagination.href.previous }}">前</a>
-      {% endif %}
-      {% if pagination.href.next %}
-      <a class="next" href="{{ pagination.href.next }}">次</a>
-      {% endif %}
-      <a class="up" href="{{ up.url }}">{{ up.title }}</a>
-    </nav>
-  </footer>
-</main>
+<footer>
+  {% if pagination.href.previous %}
+  <a class="prev" href="{{ pagination.href.previous }}">前</a>
+  {% endif %}
+  {% if pagination.href.next %}
+  <a class="next" href="{{ pagination.href.next }}">次</a>
+  {% endif %}
+  <a class="up" href="{{ up.url }}">{{ up.title }}</a>
+</footer>

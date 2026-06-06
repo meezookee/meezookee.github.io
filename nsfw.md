@@ -6,20 +6,10 @@ parent:
   url: /
 ---
 
-<main>
-
 # {{ title }}
-
-<nav>
 
 - [避難訓練](/nsfw/drill)
 
-</nav>
-
-</main>
-
 <footer>
-  <nav>
-    <a href="/" class="up">閉塞圏</a>
-  </nav>
+  <a href="/" class="up">閉塞圏</a>
 </footer>
