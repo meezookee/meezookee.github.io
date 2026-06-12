@@ -1,6 +1,7 @@
 body {
   max-inline-size: 40em;
   margin-inline: auto;
+  line-height: 2;
 }
 
 a:link {
@@ -40,12 +41,6 @@ em {
 
 strong {
   text-decoration: underline;
-}
-
-p,
-pre,
-dl {
-  line-height: 2;
 }
 
 pre {
