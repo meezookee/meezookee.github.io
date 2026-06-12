@@ -4,35 +4,37 @@ tags: post
 ---
 {% assign prev = collections.diary | getPreviousCollectionItem: page %}
 {% assign next = collections.diary | getNextCollectionItem: page %}
-<article>
-  <h1>
-  {% if title %}
-    {{ title }}
-  {% else %}
-    {{ page.date | date: "%Y年%m月%d日" }}
-  {% endif %}
-  </h1>
-  <pre>{{ content | raw }}</pre>
-  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日%H時%M分" }}</time>
-  <footer>
-    {% if prev %}
-    <a class="prev" href="{{ prev.url }}">前：
-    {%- if prev.data.title -%}
-      {{- prev.data.title -}}
-    {%- else -%}
-      {{- prev.date | date: "%Y年%m月%d日" -}}
-    {%- endif -%}
-    </a>
+<main>
+  <article>
+    <h1>
+    {% if title %}
+      {{ title }}
+    {% else %}
+      {{ page.date | date: "%Y年%m月%d日" }}
     {% endif %}
-    {% if next %}
-    <a class="next" href="{{ next.url }}">次：
-    {%- if next.data.title -%}
-      {{- next.data.title -}}
-    {%- else -%}
-      {{- next.date | date: "%Y年%m月%d日" -}}
-    {%- endif -%}
-    </a>
-    {% endif %}
-    <a class="up" href="{{ parent.url }}">{{ parent.title }}</a>
-  </footer>
-</article>
+    </h1>
+    <pre>{{ content | raw }}</pre>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日%H時%M分" }}</time>
+    <footer>
+      {% if prev %}
+      <a class="prev" href="{{ prev.url }}">前：
+      {%- if prev.data.title -%}
+        {{- prev.data.title -}}
+      {%- else -%}
+        {{- prev.date | date: "%Y年%m月%d日" -}}
+      {%- endif -%}
+      </a>
+      {% endif %}
+      {% if next %}
+      <a class="next" href="{{ next.url }}">次：
+      {%- if next.data.title -%}
+        {{- next.data.title -}}
+      {%- else -%}
+        {{- next.date | date: "%Y年%m月%d日" -}}
+      {%- endif -%}
+      </a>
+      {% endif %}
+      <a class="up" href="{{ parent.url }}">{{ parent.title }}</a>
+    </footer>
+  </article>
+</main>
