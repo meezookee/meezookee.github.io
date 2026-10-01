@@ -12,12 +12,12 @@ layout: base.liquid
       {% if post.data.title %}
         {{ post.data.title }}
       {% else %}
-        {{ post.date | date: "%Y年%m月%d日" }}
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
       {% endif %}
       </a>
     </h2>
     <pre>{{ post.content | raw }}</pre>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%m月%d日%H時%M分" }}</time>
+    <time>{{ page.date | date: "%Y-%m-%d" }}</time>
   </article>
   {% endfor %}
 </main>

@@ -2,41 +2,32 @@
 layout: base.liquid
 tags: post
 ---
+
 {% assign prev = collections.diary | getPreviousCollectionItem: page %}
 {% assign next = collections.diary | getNextCollectionItem: page %}
+
 <main>
   <article>
     <h1>
     {% if title %}
       {{ title }}
     {% else %}
-      {{ page.date | date: "%Y年%m月%d日" }}
+      <time>{{ page.date | date: "%Y-%m-%d" }}</time>
     {% endif %}
     </h1>
     <pre>{{ content | raw }}</pre>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日%H時%M分" }}</time>
-    <nav>
-      {% if prev %}
-      <a class="prev" href="{{ prev.url }}">前：
-      {% if prev.data.title %}
-        {{ prev.data.title }}
-      {% else %}
-        {{ prev.date | date: "%Y年%m月%d日" }}
-      {% endif %}
-      </a>
-      {% endif %}
-      {% if next %}
-      <a class="next" href="{{ next.url }}">次：
-      {% if next.data.title %}
-        {{ next.data.title }}
-      {% else %}
-        {{ next.date | date: "%Y年%m月%d日" }}
-      {% endif %}
-      </a>
-      {% endif %}
-      {% for ancestor in ancestors %}
-      <a class="ancestor" href="{{ ancestor.url }}">{{ ancestor.title }}</a>
-      {% endfor %}
-    </nav>
+    <time>{{ page.date | date: "%Y-%m-%d" }}</time>
   </article>
 </main>
+
+<nav>
+  {% if prev %}
+  <a class="prev" href="{{ prev.url }}">前</a>
+  {% endif %}
+  {% if next %}
+  <a class="next" href="{{ next.url }}">次</a>
+  {% endif %}
+  {% for ancestor in ancestors %}
+  <a class="ancestor" href="{{ ancestor.url }}">{{ ancestor.title }}</a>
+  {% endfor %}
+</nav>
