@@ -3,6 +3,7 @@ layout: base.liquid
 ---
 
 <h1>{{ title }}</h1>
+
 <main>
   {% for post in posts %}
   <article>
@@ -21,7 +22,7 @@ layout: base.liquid
   {% endfor %}
 </main>
 
-<footer>
+<nav>
   {% if pagination.href.previous %}
   <a class="prev" href="{{ pagination.href.previous }}">前</a>
   {% endif %}
@@ -29,4 +30,4 @@ layout: base.liquid
   <a class="next" href="{{ pagination.href.next }}">次</a>
   {% endif %}
   <a class="up" href="{{ up.url }}">{{ up.title }}</a>
-</footer>
+</nav>

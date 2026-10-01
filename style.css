@@ -4,22 +4,6 @@ body {
   line-height: 2;
 }
 
-a:link {
-  color: #006a9f;
-}
-
-a:visited {
-  color: #884882;
-}
-
-a:hover {
-  color: #22753f;
-}
-
-a:active {
-  color: #925100;
-}
-
 time,
 em {
   font-family: sans-serif;
@@ -47,23 +31,19 @@ pre {
   white-space: pre-wrap;
 }
 
-footer {
-  display: grid;
-  grid-template: auto auto / 1fr 1fr;
+nav {
+  text-align: center;
 }
 
 .prev {
-  grid-column: 1;
-  justify-self: start;
+  float: inline-start;
 }
 
 .next {
-  grid-column: 2;
-  justify-self: end;
+  float: inline-end;
 }
 
 .up {
-  grid-row: 2;
-  grid-column: 1 / span 2;
-  justify-self: center;
+  display: block;
+  clear: both;
 }
