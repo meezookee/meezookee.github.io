@@ -12,9 +12,7 @@ em {
 p,
 pre,
 dd {
-  font-family:
-    Noto Serif CJK JP,
-    serif;
+  font-family: serif;
   text-align: justify;
 }
 
@@ -43,7 +41,7 @@ nav {
   float: inline-end;
 }
 
-.up {
+.ancestor {
   display: block;
   clear: both;
 }

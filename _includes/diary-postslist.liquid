@@ -29,5 +29,7 @@ layout: base.liquid
   {% if pagination.href.next %}
   <a class="next" href="{{ pagination.href.next }}">次</a>
   {% endif %}
-  <a class="up" href="{{ up.url }}">{{ up.title }}</a>
+  {% for ancestor in ancestors %}
+  <a class="ancestor" href="{{ ancestor.url }}">{{ ancestor.title }}</a>
+  {% endfor %}
 </nav>

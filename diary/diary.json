@@ -1,8 +1,14 @@
 {
   "tags": ["post", "diary"],
-  "parent": {
-    "title": "日記帳",
-    "url": "/diary"
-  },
+  "ancestors": [
+    {
+      "title": "日記帳",
+      "url": "/diary"
+    },
+    {
+      "title": "閉塞圏",
+      "url": "/"
+    }
+  ],
   "layout": "diary-post.liquid"
 }
