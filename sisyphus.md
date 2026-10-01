@@ -1,9 +1,6 @@
 ---
 title: カミュ『シーシュポスの神話』について
 layout: base.liquid
-parent:
-  title: 閉塞圏
-  url: /
 ---
 
 # {{ title }}
