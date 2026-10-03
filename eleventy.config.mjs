@@ -1,26 +1,21 @@
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import markdownIt from "markdown-it";
 
 export default function (eleventyConfig) {
+  // 古いプレーンテキスト形式をHTMLに変換。
   eleventyConfig.addTemplateFormats("txt");
   eleventyConfig.addExtension("txt", {
-    compile: async (content) => async () => content,
+    compile: async (content) => async () =>
+      content
+        .trimEnd()
+        .replaceAll(/^/gm, "<p>")
+        .replaceAll(/$/gm, "</p>")
+        .replaceAll("<p></p>", "<br />"),
+  });
+
+  eleventyConfig.setLibrary("md", markdownIt({ html: true, breaks: true }));
+  eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib.renderer.rules.hr = () => "<br />";
   });
 
   eleventyConfig.addPassthroughCopy("style.css");
-
-  eleventyConfig.addPlugin(feedPlugin, {
-    collection: {
-      name: "post",
-    },
-    metadata: {
-      language: "ja",
-      title: "閉塞圏",
-      subtitle: "閉塞圏",
-      base: "https://meezookee.github.io",
-      author: {
-        name: "meezookee",
-        email: "meezookee@example.invalid",
-      },
-    },
-  });
 }

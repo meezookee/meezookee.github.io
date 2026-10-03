@@ -4,29 +4,16 @@ body {
   line-height: 2;
 }
 
-time,
-em {
-  font-family: sans-serif;
-}
-
-p,
-pre,
-dd {
+p {
   font-family: serif;
   text-align: justify;
+  margin-block: 0;
 }
 
 em {
+  font-family: sans-serif;
   font-style: normal;
   font-weight: bold;
-}
-
-strong {
-  text-decoration: underline;
-}
-
-pre {
-  white-space: pre-wrap;
 }
 
 nav {

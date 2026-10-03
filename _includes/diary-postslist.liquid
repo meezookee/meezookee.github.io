@@ -16,7 +16,7 @@ layout: base.liquid
       {% endif %}
       </a>
     </h2>
-    <pre>{{ post.content | raw }}</pre>
+    <section>{{ post.content | raw }}</section>
     <time>{{ page.date | date: "%Y-%m-%d" }}</time>
   </article>
   {% endfor %}
